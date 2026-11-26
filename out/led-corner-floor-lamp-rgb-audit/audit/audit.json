@@ -1,0 +1,162 @@
+[
+ {
+  "key": "f01",
+  "w": 1024,
+  "h": 1024,
+  "sharpness": 186,
+  "white_border": 1.0,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 0
+ },
+ {
+  "key": "f02",
+  "w": 1600,
+  "h": 1600,
+  "sharpness": 76,
+  "white_border": 0.0,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 1
+ },
+ {
+  "key": "f03",
+  "w": 1024,
+  "h": 1024,
+  "sharpness": 537,
+  "white_border": 0.0,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 2
+ },
+ {
+  "key": "f04",
+  "w": 1024,
+  "h": 1024,
+  "sharpness": 516,
+  "white_border": 0.07,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 3
+ },
+ {
+  "key": "f05",
+  "w": 2048,
+  "h": 2048,
+  "sharpness": 168,
+  "white_border": 0.0,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 4
+ },
+ {
+  "key": "f06",
+  "w": 1800,
+  "h": 1800,
+  "sharpness": 162,
+  "white_border": 0.0,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 5
+ },
+ {
+  "key": "f07",
+  "w": 1254,
+  "h": 1254,
+  "sharpness": 38,
+  "white_border": 0.0,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 6
+ },
+ {
+  "key": "f08",
+  "w": 900,
+  "h": 900,
+  "sharpness": 94,
+  "white_border": 0.0,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 7
+ },
+ {
+  "key": "f09",
+  "w": 900,
+  "h": 900,
+  "sharpness": 76,
+  "white_border": 0.0,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 8
+ },
+ {
+  "key": "f10",
+  "w": 1426,
+  "h": 1426,
+  "sharpness": 1381,
+  "white_border": 0.01,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 9
+ },
+ {
+  "key": "f11",
+  "w": 1125,
+  "h": 1125,
+  "sharpness": 116,
+  "white_border": 0.0,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 8
+ },
+ {
+  "key": "f12",
+  "w": 1500,
+  "h": 1500,
+  "sharpness": 97,
+  "white_border": 0.0,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 11
+ },
+ {
+  "key": "f13",
+  "w": 1500,
+  "h": 1500,
+  "sharpness": 124,
+  "white_border": 0.0,
+  "text_boxes": 1,
+  "text": "C",
+  "dup_group": 12
+ },
+ {
+  "key": "f14",
+  "w": 1500,
+  "h": 1500,
+  "sharpness": 48,
+  "white_border": 0.0,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 13
+ },
+ {
+  "key": "f15",
+  "w": 1080,
+  "h": 1080,
+  "sharpness": 1266,
+  "white_border": 1.0,
+  "text_boxes": 4,
+  "text": "63in. | (160cm) | 161n.(40cm) | 16in.(40cm)",
+  "dup_group": 0
+ },
+ {
+  "key": "f16",
+  "w": 1080,
+  "h": 1080,
+  "sharpness": 1272,
+  "white_border": 1.0,
+  "text_boxes": 4,
+  "text": "56in. | (142cm) | 161n.(40cm) | 21in.(53cm)",
+  "dup_group": 0
+ }
+]
