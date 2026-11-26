@@ -28,7 +28,7 @@ jobs:
           pip install --quiet torch torchvision --index-url https://download.pytorch.org/whl/cpu
           pip install --quiet -r requirements.txt
       - name: Run every changed plan
-        env: {PLAN_INPUT: '${{ github.event.inputs.plan }}'}
+        env: {PLAN_INPUT: '${{ github.event.inputs.plan }}', PHOTOROOM_API_KEY: '${{ secrets.PHOTOROOM_API_KEY }}'}
         run: |
           if [ -n "$PLAN_INPUT" ]; then PLANS="$PLAN_INPUT";
           else PLANS=$(git diff --name-only HEAD~1 HEAD -- 'plans/*.json'); fi

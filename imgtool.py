@@ -154,6 +154,22 @@ def zoom(before, after, path, key):
     d.text((S + 20, 14), f"{key} after ({after.width}px), same spot", fill='black', font=F)
     sheet.paste(a, (10, 50)); sheet.paste(b, (S + 20, 50)); sheet.save(path, quality=90)
 
+def photoroom(path, it):
+    """Paid option ($0.10 per image on Photoroom's Plus plan, free and watermarked with a sandbox_ key).
+    Runs only when a plan asks for it and the repo secret PHOTOROOM_API_KEY is set. Never called by default."""
+    import requests, io
+    key = os.environ.get('PHOTOROOM_API_KEY', '')
+    if not key: raise SystemExit('PHOTOROOM_API_KEY repo secret is not set')
+    data = {'outputSize': it.get('size', '2000x2000'), 'padding': str(it.get('padding', 0.1)),
+            'lighting.mode': it.get('lighting', 'ai.auto'), 'shadow.mode': it.get('shadow', 'ai.soft')}
+    if it.get('prompt'): data['background.prompt'] = it['prompt']
+    else: data['background.color'] = it.get('bg', 'F7F7F7')
+    r = requests.post('https://image-api.photoroom.com/v2/edit', headers={'x-api-key': key},
+                      files={'imageFile': open(path, 'rb')}, data=data, timeout=180)
+    if r.status_code != 200: raise SystemExit(f'Photoroom error {r.status_code}: {r.text[:300]}')
+    print('  photoroom', 'sandbox (watermarked)' if key.startswith('sandbox_') else 'live ($0.10)')
+    return Image.open(io.BytesIO(r.content)).convert('RGB')
+
 def process(plan_path, src, out):
     plan = json.load(open(plan_path)); os.makedirs(out, exist_ok=True); pairs = []
     for it in plan['images']:
@@ -162,6 +178,7 @@ def process(plan_path, src, out):
         t = time.time(); im = load(f); res = im
         for step in act.split('+'):
             if step == 'studio': res = studio(res)
+            elif step == 'photoroom': res = photoroom(f, it)
             elif step in ('upscale', 'sharpen'): res = upscale(res)
             elif step == 'detext': res = detext(res, it.get('text_boxes'))
         name = f"{it['position']:02d}-{it['role']}-{it['key']}.jpg"

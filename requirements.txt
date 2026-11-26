@@ -4,3 +4,4 @@ rapidocr-onnxruntime
 opencv-python-headless
 pillow
 numpy
+requests
