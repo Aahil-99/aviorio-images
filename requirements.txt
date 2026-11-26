@@ -1,0 +1,6 @@
+rembg[cpu]
+spandrel
+rapidocr-onnxruntime
+opencv-python-headless
+pillow
+numpy
