@@ -25,22 +25,28 @@ jobs:
         with: {path: ~/.u2net, key: u2net-birefnet-v1}
       - name: Install free models and libraries
         run: |
-          pip install --quiet torch --index-url https://download.pytorch.org/whl/cpu
+          pip install --quiet torch torchvision --index-url https://download.pytorch.org/whl/cpu
           pip install --quiet -r requirements.txt
       - name: Run every changed plan
+        env: {PLAN_INPUT: '${{ github.event.inputs.plan }}'}
         run: |
-          if [ -n "${{ github.event.inputs.plan }}" ]; then PLANS="${{ github.event.inputs.plan }}";
+          if [ -n "$PLAN_INPUT" ]; then PLANS="$PLAN_INPUT";
           else PLANS=$(git diff --name-only HEAD~1 HEAD -- 'plans/*.json'); fi
+          FAILED=0
           for P in $PLANS; do
             [ -f "$P" ] || continue
-            H=$(basename "$P" .json); MODE=$(python -c "import json;print(json.load(open('$P')).get('mode','process'))")
-            OUT="out/$H/$MODE"; rm -rf "$OUT" "src/$H"
-            python imgtool.py fetch "$P" "src/$H"
-            if [ "$MODE" = audit ]; then python imgtool.py audit "src/$H" "$OUT"
-            else python imgtool.py process "$P" "src/$H" "$OUT"; fi
+            H=$(basename "$P" .json); MODE=$(python -c "import json,sys;print(json.load(open(sys.argv[1])).get('mode','process'))" "$P")
+            OUT="out/$H/$MODE"; rm -rf "$OUT" "src/$H"; mkdir -p "$OUT"
+            if python imgtool.py fetch "$P" "src/$H" && \
+               if [ "$MODE" = audit ]; then python imgtool.py audit "src/$H" "$OUT"; else python imgtool.py process "$P" "src/$H" "$OUT"; fi
+            then echo ok > "$OUT/status.txt"
+            else echo failed > "$OUT/status.txt"; FAILED=1; fi
           done
+          echo "FAILED=$FAILED" >> "$GITHUB_ENV"
       - name: Save results to the repo
+        if: always()
         run: |
           git config user.name "aviorio-images-bot"; git config user.email "actions@users.noreply.github.com"
           git add out; git commit -m "Image results for ${{ github.sha }}" || exit 0
           git pull --rebase; git push
+          [ "$FAILED" = 0 ]
