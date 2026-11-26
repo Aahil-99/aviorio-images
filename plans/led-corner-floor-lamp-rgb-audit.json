@@ -1,0 +1,87 @@
+{
+ "product": "led-corner-floor-lamp-rgb",
+ "product_id": "gid://shopify/Product/15398644252924",
+ "mode": "audit",
+ "images": [
+  {
+   "key": "f01",
+   "media_id": "gid://shopify/MediaImage/46223839068412",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/aurel-corner-floor-lamp-white-bg.png?v=1790627240"
+  },
+  {
+   "key": "f02",
+   "media_id": "gid://shopify/MediaImage/46223839101180",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/969387b051e5c947cd56e9d6ea0cf25c.jpg?v=1790627240"
+  },
+  {
+   "key": "f03",
+   "media_id": "gid://shopify/MediaImage/46223839133948",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/hf_20260808_113653_aa570d15-6368-43d7-be3f-493417fa7c8f.png?v=1790627241"
+  },
+  {
+   "key": "f04",
+   "media_id": "gid://shopify/MediaImage/46223839166716",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/hf_20260808_113653_84364f61-acb8-46ec-97ca-97570cec34ea.png?v=1790627240"
+  },
+  {
+   "key": "f05",
+   "media_id": "gid://shopify/MediaImage/46223839199484",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/hf_20260817_110953_94ecadba-ffbd-4612-909d-516aa88048aa.png?v=1790627241"
+  },
+  {
+   "key": "f06",
+   "media_id": "gid://shopify/MediaImage/46223839232252",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/87d0e200c33b1a8c086e41a0f7284408.jpg?v=1790627240"
+  },
+  {
+   "key": "f07",
+   "media_id": "gid://shopify/MediaImage/46223839265020",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/97a1a315-e4b7-4fda-82d0-31045c72c14a.png?v=1790627240"
+  },
+  {
+   "key": "f08",
+   "media_id": "gid://shopify/MediaImage/46223839297788",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/1a53dd38-df56-472c-9568-44be424a5555.jpg?v=1790627240"
+  },
+  {
+   "key": "f09",
+   "media_id": "gid://shopify/MediaImage/46223839330556",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/159fb03d-35f7-4c88-8b59-e23c231a5629.jpg?v=1790627240"
+  },
+  {
+   "key": "f10",
+   "media_id": "gid://shopify/MediaImage/46223839363324",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/2e1b729f23af8317dc7d5c28106b7c97.jpg?v=1790627240"
+  },
+  {
+   "key": "f11",
+   "media_id": "gid://shopify/MediaImage/46223839396092",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/linear-floor-lamp-1635759.webp?v=1790627241"
+  },
+  {
+   "key": "f12",
+   "media_id": "gid://shopify/MediaImage/46223839428860",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/8bcca5911bd6b3b7adb73a8f18f47035.jpg?v=1790627240"
+  },
+  {
+   "key": "f13",
+   "media_id": "gid://shopify/MediaImage/46223839461628",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/a93834c76d8b2fcb43f8fa688eb74aa3.jpg?v=1790627241"
+  },
+  {
+   "key": "f14",
+   "media_id": "gid://shopify/MediaImage/46223839494396",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/af862a9889e96c22119c4437a106d73e.jpg?v=1790627240"
+  },
+  {
+   "key": "f15",
+   "media_id": "gid://shopify/MediaImage/46223839527164",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/6c290707-94ee-4398-9cb7-7983aa12aa4a.png?v=1790627240"
+  },
+  {
+   "key": "f16",
+   "media_id": "gid://shopify/MediaImage/46223839559932",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/86954028-70aa-4ad4-973f-28913fa7e8b8.png?v=1790627240"
+  }
+ ]
+}
