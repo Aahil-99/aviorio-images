@@ -1,0 +1,50 @@
+{
+ "product": "test-lunaris-audit",
+ "mode": "audit",
+ "images": [
+  {
+   "key": "m01",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/S71a79b2ff9234f9c8b780e807d0eac1bI.jpg?v=1785082303"
+  },
+  {
+   "key": "m02",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/Saadf426c78b6406f9a243f62ad1e0444k.jpg?v=1785082303"
+  },
+  {
+   "key": "m03",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/Se18e3bf497f24d97b9df71f45f3ec643n.jpg?v=1785082303"
+  },
+  {
+   "key": "m04",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/Sa2fe0748d0614e939b77ae555409fb59D.jpg?v=1785082303"
+  },
+  {
+   "key": "m05",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/S6b34753ebd9c4db899c75a692171a56a7.jpg?v=1785082303"
+  },
+  {
+   "key": "m06",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/mainimage5Creatieve-Moon-Eclipse-Gangpad-Wandlamp-Gang-Bed-Wandlamp-Woonkamer-Ronde-Goud-Koper-Led-Wandkandelaar-Slaapkamer-Decor_480x480_e99c9ed3-c48b-46c6-abeb-fea1cd0ddf48.jpg?v=1785082303"
+  },
+  {
+   "key": "m07",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/S44b5d9dd974a453caefcd3f8315ffe87T.jpg?v=1785082303"
+  },
+  {
+   "key": "m08",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/Bronze_Bronze_800x_6032c930-827a-4826-ba4e-3717d9ad99b3.webp?v=1785082303"
+  },
+  {
+   "key": "m09",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/Noir_Or_700x_d1aeaa85-b897-4c3c-ae83-e0160c4f079d.webp?v=1785082303"
+  },
+  {
+   "key": "m10",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/Or_Or_700x_ade9b596-1982-4d0e-8382-b09b7baf6e5c.webp?v=1785082303"
+  },
+  {
+   "key": "m11",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/Noir_Bronze_700x_e6409dc7-b3fd-46aa-9b46-ddb7ff381acd.webp?v=1785082303"
+  }
+ ]
+}
