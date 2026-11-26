@@ -136,6 +136,24 @@ def detext(im, boxes=None):
     with torch.no_grad(): o = _lama(torch.from_numpy(img).permute(2, 0, 1)[None], torch.from_numpy(mk)[None, None])
     return Image.fromarray((o[0].permute(1, 2, 0).numpy()[:H, :W] * 255).clip(0, 255).astype('uint8'))
 
+def zoom(before, after, path, key):
+    """Side by side close-up of the busiest part of the photo, the way a shopper sees it when zooming:
+    left is the current photo enlarged as a browser would, right is the new one at the same spot."""
+    import cv2
+    g = cv2.Laplacian(np.asarray(before.convert('L'), np.float32), cv2.CV_32F) ** 2
+    c = max(64, min(before.size) // 4); best, bx, by = -1, 0, 0
+    for y in range(0, before.height - c + 1, c // 2):
+        for x in range(0, before.width - c + 1, c // 2):
+            v = g[y:y + c, x:x + c].mean()
+            if v > best: best, bx, by = v, x, y
+    k = after.width / before.width; S = 640
+    a = before.crop((bx, by, bx + c, by + c)).resize((S, S), Image.BICUBIC)
+    b = after.crop((round(bx * k), round(by * k), round((bx + c) * k), round((by + c) * k))).resize((S, S), Image.LANCZOS)
+    sheet = Image.new('RGB', (2 * S + 30, S + 60), 'white'); d = ImageDraw.Draw(sheet); F = font(24)
+    d.text((10, 14), f"{key} now ({before.width}px), zoomed", fill='black', font=F)
+    d.text((S + 20, 14), f"{key} after ({after.width}px), same spot", fill='black', font=F)
+    sheet.paste(a, (10, 50)); sheet.paste(b, (S + 20, 50)); sheet.save(path, quality=90)
+
 def process(plan_path, src, out):
     plan = json.load(open(plan_path)); os.makedirs(out, exist_ok=True); pairs = []
     for it in plan['images']:
@@ -148,9 +166,10 @@ def process(plan_path, src, out):
             elif step == 'detext': res = detext(res, it.get('text_boxes'))
         name = f"{it['position']:02d}-{it['role']}-{it['key']}.jpg"
         res.save(os.path.join(out, name), quality=92); it['output'] = name
-        pairs.append((im, res, f"{it['position']}. {it['role']}: {act}")); print(name, act, res.size, round(time.time() - t, 1), 's')
+        pairs.append((it['position'], im, res, f"{it['position']}. {it['role']}: {act}")); print(name, act, res.size, round(time.time() - t, 1), 's')
+        if res.size != im.size: zoom(im, res, os.path.join(out, f"zoom-{it['position']:02d}-{it['key']}.jpg"), it['key'])
     json.dump(plan, open(os.path.join(out, 'plan_result.json'), 'w'), indent=1)
-    R = 420; F = font(22); pairs.sort(key=lambda p: p[2])
+    R = 420; F = font(22); pairs.sort(key=lambda p: p[0]); pairs = [p[1:] for p in pairs]
     sheet = Image.new('RGB', (2 * R + 40, len(pairs) * (R + 40)), 'white'); d = ImageDraw.Draw(sheet)
     for i, (a, b, lab) in enumerate(pairs):
         y = i * (R + 40); d.text((10, y + 6), lab, fill='black', font=F)
