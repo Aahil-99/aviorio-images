@@ -160,6 +160,7 @@ def photoroom(path, it):
     import requests, io
     key = os.environ.get('PHOTOROOM_API_KEY', '')
     if not key: raise SystemExit('PHOTOROOM_API_KEY repo secret is not set')
+    if it.get('sandbox_only') and not key.startswith('sandbox_'): raise SystemExit('Plan is marked sandbox_only but the saved key is a live (paid) key, so nothing was sent')
     data = {'outputSize': it.get('size', '2000x2000'), 'padding': str(it.get('padding', 0.1)),
             'lighting.mode': it.get('lighting', 'ai.auto'), 'shadow.mode': it.get('shadow', 'ai.soft')}
     if it.get('prompt'): data['background.prompt'] = it['prompt']
