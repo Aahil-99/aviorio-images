@@ -1,0 +1,142 @@
+[
+ {
+  "key": "s01",
+  "w": 1080,
+  "h": 1080,
+  "sharpness": 467,
+  "white_border": 0.0,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 0
+ },
+ {
+  "key": "s02",
+  "w": 1080,
+  "h": 1080,
+  "sharpness": 136,
+  "white_border": 0.0,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 1
+ },
+ {
+  "key": "s03",
+  "w": 1020,
+  "h": 1020,
+  "sharpness": 964,
+  "white_border": 0.0,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 2
+ },
+ {
+  "key": "s04",
+  "w": 1020,
+  "h": 1020,
+  "sharpness": 675,
+  "white_border": 0.0,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 3
+ },
+ {
+  "key": "s05",
+  "w": 1020,
+  "h": 1020,
+  "sharpness": 667,
+  "white_border": 0.0,
+  "text_boxes": 1,
+  "text": "UD",
+  "dup_group": 4
+ },
+ {
+  "key": "s06",
+  "w": 1020,
+  "h": 1020,
+  "sharpness": 1091,
+  "white_border": 0.0,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 5
+ },
+ {
+  "key": "s07",
+  "w": 1020,
+  "h": 1020,
+  "sharpness": 1923,
+  "white_border": 0.0,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 6
+ },
+ {
+  "key": "s08",
+  "w": 1020,
+  "h": 1020,
+  "sharpness": 1948,
+  "white_border": 0.15,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 7
+ },
+ {
+  "key": "s09",
+  "w": 1020,
+  "h": 1020,
+  "sharpness": 840,
+  "white_border": 0.0,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 8
+ },
+ {
+  "key": "s10",
+  "w": 1020,
+  "h": 1020,
+  "sharpness": 143,
+  "white_border": 0.0,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 9
+ },
+ {
+  "key": "s11",
+  "w": 1020,
+  "h": 1020,
+  "sharpness": 273,
+  "white_border": 0.18,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 10
+ },
+ {
+  "key": "s12",
+  "w": 1080,
+  "h": 1080,
+  "sharpness": 829,
+  "white_border": 0.69,
+  "text_boxes": 2,
+  "text": "1EO | 1",
+  "dup_group": 11
+ },
+ {
+  "key": "s13",
+  "w": 1020,
+  "h": 1020,
+  "sharpness": 425,
+  "white_border": 1.0,
+  "text_boxes": 0,
+  "text": "",
+  "dup_group": 12
+ },
+ {
+  "key": "s14",
+  "w": 800,
+  "h": 800,
+  "sharpness": 897,
+  "white_border": 1.0,
+  "text_boxes": 3,
+  "text": "6.1 inches | 4.3 inches | 2.7 inches",
+  "dup_group": 13
+ }
+]
