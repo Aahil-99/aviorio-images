@@ -1,0 +1,137 @@
+{
+ "product": "solar-wall-light",
+ "product_id": "gid://shopify/Product/9438653481212",
+ "mode": "process",
+ "images": [
+  {
+   "key": "s13",
+   "media_id": "gid://shopify/MediaImage/39901272506620",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/solar-powered-motion-sensor-wall-light-waterproof-construction-detail.jpg?v=1787374823",
+   "position": 1,
+   "role": "hero",
+   "action": "upscale"
+  },
+  {
+   "key": "s01",
+   "media_id": "gid://shopify/MediaImage/39901272113404",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/solar-powered-motion-sensor-wall-light-modern-house-entrance-dusk.jpg?v=1787374823",
+   "position": 2,
+   "role": "in-context-scale",
+   "action": "keep"
+  },
+  {
+   "key": "s03",
+   "media_id": "gid://shopify/MediaImage/39901272178940",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/solar-powered-motion-sensor-wall-light-bright-illumination-dark-wall.jpg?v=1787374823",
+   "position": 3,
+   "role": "lit-warm-variant",
+   "action": "keep"
+  },
+  {
+   "key": "s04",
+   "media_id": "gid://shopify/MediaImage/39901272211708",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/solar-powered-motion-sensor-wall-light-solar-panel-led-closeup.jpg?v=1787374823",
+   "position": 4,
+   "role": "lit-daylight-variant",
+   "action": "keep"
+  },
+  {
+   "key": "s14",
+   "media_id": "gid://shopify/MediaImage/39901272539388",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/solar-powered-motion-sensor-wall-light-technical-diagram-dimensions-structure.jpg?v=1787374823",
+   "position": 5,
+   "role": "dimensions",
+   "action": "upscale"
+  },
+  {
+   "key": "s06",
+   "media_id": "gid://shopify/MediaImage/39901272277244",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/solar-powered-motion-sensor-wall-light-modern-design-near-garage.jpg?v=1787374823",
+   "position": 6,
+   "role": "motion-sensor",
+   "action": "keep"
+  },
+  {
+   "key": "s09",
+   "media_id": "gid://shopify/MediaImage/39901272375548",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/solar-powered-motion-sensor-wall-light-sleek-black-finish-wall.jpg?v=1787374823",
+   "position": 7,
+   "role": "solar-charging",
+   "action": "keep"
+  },
+  {
+   "key": "s08",
+   "media_id": "gid://shopify/MediaImage/39901272342780",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/solar-powered-motion-sensor-wall-light-motion-sensor-detail-view.jpg?v=1787374823",
+   "position": 8,
+   "role": "waterproof",
+   "action": "keep"
+  },
+  {
+   "key": "s07",
+   "media_id": "gid://shopify/MediaImage/39901272310012",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/solar-powered-motion-sensor-wall-light-security-illumination-driveway.jpg?v=1787374823",
+   "position": 9,
+   "role": "lit-wall",
+   "action": "keep"
+  },
+  {
+   "key": "s05",
+   "media_id": "gid://shopify/MediaImage/39901272244476",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/solar-powered-motion-sensor-wall-light-warm-light-garden-pathway.jpg?v=1787374823",
+   "position": 10,
+   "role": "lit-wall",
+   "action": "keep"
+  },
+  {
+   "key": "s02",
+   "media_id": "gid://shopify/MediaImage/39901272146172",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/solar-powered-motion-sensor-wall-light-sleek-exterior-wall.jpg?v=1787374823",
+   "position": 11,
+   "role": "unlit-wall",
+   "action": "keep"
+  },
+  {
+   "key": "s10",
+   "media_id": "gid://shopify/MediaImage/39901272408316",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/solar-powered-motion-sensor-wall-light-bright-backyard-setting.jpg?v=1787374823",
+   "position": 12,
+   "role": "detail-lit",
+   "action": "keep"
+  },
+  {
+   "key": "s11",
+   "media_id": "gid://shopify/MediaImage/39901272441084",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/solar-powered-motion-sensor-wall-light-solar-panel-modern-design-closeup.jpg?v=1787374823",
+   "position": 13,
+   "role": "detail",
+   "action": "keep"
+  },
+  {
+   "key": "s12",
+   "media_id": "gid://shopify/MediaImage/39901272473852",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/solar-powered-motion-sensor-wall-light-minimalist-brick-wall.jpg?v=1787374823",
+   "position": 14,
+   "role": "detail",
+   "action": "keep"
+  },
+  {
+   "key": "s13",
+   "media_id": "gid://shopify/MediaImage/39901272506620",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/solar-powered-motion-sensor-wall-light-waterproof-construction-detail.jpg?v=1787374823",
+   "position": 90,
+   "role": "free-studio-compare",
+   "action": "studio"
+  },
+  {
+   "key": "s13",
+   "media_id": "gid://shopify/MediaImage/39901272506620",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/solar-powered-motion-sensor-wall-light-waterproof-construction-detail.jpg?v=1787374823",
+   "position": 91,
+   "role": "photoroom-sandbox-scene",
+   "action": "photoroom",
+   "sandbox_only": true,
+   "prompt": "modern house exterior wall in smooth light grey render at dusk, warm lights in the windows, small garden plants below, photorealistic architectural photography"
+  }
+ ]
+}

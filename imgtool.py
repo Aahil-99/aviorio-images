@@ -185,7 +185,7 @@ def process(plan_path, src, out):
         name = f"{it['position']:02d}-{it['role']}-{it['key']}.jpg"
         res.save(os.path.join(out, name), quality=92); it['output'] = name
         pairs.append((it['position'], im, res, f"{it['position']}. {it['role']}: {act}")); print(name, act, res.size, round(time.time() - t, 1), 's')
-        if res.size != im.size: zoom(im, res, os.path.join(out, f"zoom-{it['position']:02d}-{it['key']}.jpg"), it['key'])
+        if 'upscale' in act or 'sharpen' in act: zoom(im, res, os.path.join(out, f"zoom-{it['position']:02d}-{it['key']}.jpg"), it['key'])
     json.dump(plan, open(os.path.join(out, 'plan_result.json'), 'w'), indent=1)
     R = 420; F = font(22); pairs.sort(key=lambda p: p[0]); pairs = [p[1:] for p in pairs]
     sheet = Image.new('RGB', (2 * R + 40, len(pairs) * (R + 40)), 'white'); d = ImageDraw.Draw(sheet)
