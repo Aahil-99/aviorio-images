@@ -154,6 +154,11 @@ def zoom(before, after, path, key):
     d.text((S + 20, 14), f"{key} after ({after.width}px), same spot", fill='black', font=F)
     sheet.paste(a, (10, 50)); sheet.paste(b, (S + 20, 50)); sheet.save(path, quality=90)
 
+# Aviorio brand palette, from the live theme (Aviorio V2) settings: accent 1, accent 2, background.
+BRAND = {'espresso': '422D23', 'bronze': '9A7646', 'cream': 'F2ECE2'}
+INDOOR_STYLE = (' Styled in a warm home interior that matches the Aviorio brand: deep espresso brown (#422D23) accent wall,'
+                ' cabinetry or upholstery, warm cream (#F2ECE2) walls, brushed bronze (#9A7646) details, soft warm evening light.')
+
 def photoroom(path, it):
     """Paid option ($0.10 per image on Photoroom's Plus plan, free and watermarked with a sandbox_ key).
     Runs only when a plan asks for it and the repo secret PHOTOROOM_API_KEY is set. Never called by default."""
@@ -161,10 +166,12 @@ def photoroom(path, it):
     key = os.environ.get('PHOTOROOM_API_KEY', '')
     if not key: raise SystemExit('PHOTOROOM_API_KEY repo secret is not set')
     if it.get('sandbox_only') and not key.startswith('sandbox_'): raise SystemExit('Plan is marked sandbox_only but the saved key is a live (paid) key, so nothing was sent')
-    data = {'outputSize': it.get('size', '2000x2000'), 'padding': str(it.get('padding', 0.1)),
+    data = {'outputSize': it.get('size', '2000x2000'), 'padding': str(it.get('padding', 0.3 if it.get('prompt') else 0.1)),
             'lighting.mode': it.get('lighting', 'ai.auto'), 'shadow.mode': it.get('shadow', 'ai.soft')}
-    if it.get('prompt'): data['background.prompt'] = it['prompt']
-    else: data['background.color'] = it.get('bg', 'F7F7F7')
+    # Brand rule: indoor products get the espresso and cream palette in the scene; outdoor scenes stay natural.
+    indoor = it.get('setting', 'indoor') == 'indoor'
+    if it.get('prompt'): data['background.prompt'] = it['prompt'] + (INDOOR_STYLE if indoor else '')
+    else: data['background.color'] = it.get('bg', BRAND['cream'] if indoor else 'F7F7F7')
     r = requests.post('https://image-api.photoroom.com/v2/edit', headers={'x-api-key': key},
                       files={'imageFile': open(path, 'rb')}, data=data, timeout=180)
     if r.status_code != 200: raise SystemExit(f'Photoroom error {r.status_code}: {r.text[:300]}')

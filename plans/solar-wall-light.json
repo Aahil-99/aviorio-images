@@ -119,19 +119,14 @@
    "key": "s13",
    "media_id": "gid://shopify/MediaImage/39901272506620",
    "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/solar-powered-motion-sensor-wall-light-waterproof-construction-detail.jpg?v=1787374823",
-   "position": 90,
-   "role": "free-studio-compare",
-   "action": "studio"
-  },
-  {
-   "key": "s13",
-   "media_id": "gid://shopify/MediaImage/39901272506620",
-   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/solar-powered-motion-sensor-wall-light-waterproof-construction-detail.jpg?v=1787374823",
    "position": 91,
-   "role": "photoroom-sandbox-scene",
+   "role": "photoroom-sandbox-outdoor",
    "action": "photoroom",
    "sandbox_only": true,
-   "prompt": "modern house exterior wall in smooth light grey render at dusk, warm lights in the windows, small garden plants below, photorealistic architectural photography"
+   "setting": "outdoor",
+   "padding": 0.38,
+   "prompt": "mounted on a smooth light grey render exterior wall of a modern house beside the front door at dusk, small garden plants below, realistic scale, photorealistic architectural photography"
   }
- ]
+ ],
+ "run": 2
 }
