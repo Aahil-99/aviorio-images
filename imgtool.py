@@ -161,6 +161,8 @@ INDOOR_STYLE = (' The room must clearly show the Aviorio brand palette: walls pa
                 ' brushed bronze (#9A7646) accents such as a side table, picture frames or a vase. Warm, cozy, upscale,'
                 ' soft warm evening light, photorealistic interior design photography.')
 
+NO_EXTRA = (' The scene must not contain any other lamp, light fixture, pole, stand or copy of the product,'
+            ' so the real product is the only one in the picture.')
 def photoroom(path, it):
     """Paid option ($0.10 per image on Photoroom's Plus plan, free and watermarked with a sandbox_ key).
     Runs only when a plan asks for it and the repo secret PHOTOROOM_API_KEY is set. Never called by default."""
@@ -172,7 +174,7 @@ def photoroom(path, it):
             'lighting.mode': it.get('lighting', 'ai.auto'), 'shadow.mode': it.get('shadow', 'ai.soft')}
     # Brand rule: indoor products get the espresso and cream palette in the scene; outdoor scenes stay natural.
     indoor = it.get('setting', 'indoor') == 'indoor'
-    if it.get('prompt'): data['background.prompt'] = it['prompt'] + (INDOOR_STYLE if indoor else '')
+    if it.get('prompt'): data['background.prompt'] = it['prompt'] + (INDOOR_STYLE if indoor else '') + NO_EXTRA
     else: data['background.color'] = it.get('bg', BRAND['cream'] if indoor else 'F7F7F7')
     r = requests.post('https://image-api.photoroom.com/v2/edit', headers={'x-api-key': key},
                       files={'imageFile': open(path, 'rb')}, data=data, timeout=180)

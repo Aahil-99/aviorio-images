@@ -1,0 +1,29 @@
+{
+ "product": "photoroom-test-3",
+ "mode": "process",
+ "run": 1,
+ "images": [
+  {
+   "key": "f01",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/01-hero-f01.jpg?v=1795733793",
+   "action": "photoroom",
+   "sandbox_only": true,
+   "setting": "indoor",
+   "padding": 0.15,
+   "position": 1,
+   "role": "lamp-living-room-corner",
+   "prompt": "the corner of a cozy modern living room, a cream boucle armchair beside the corner, a wool rug on a warm oak floor, empty corner where the two walls meet"
+  },
+  {
+   "key": "f01",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/01-hero-f01.jpg?v=1795733793",
+   "action": "photoroom",
+   "sandbox_only": true,
+   "setting": "indoor",
+   "padding": 0.15,
+   "position": 2,
+   "role": "lamp-bedroom-corner",
+   "prompt": "the corner of a calm modern bedroom beside the bed, an espresso wood bed with cream linen bedding, a bronze bedside table, empty corner where the two walls meet"
+  }
+ ]
+}
