@@ -75,14 +75,14 @@ def audit(src, out):
 
 # ---------- actions ----------
 _rembg = None
-def studio(im):
+def studio(im, top=(250, 249, 247), bottom=(232, 229, 225)):
     global _rembg
     from rembg import remove, new_session
     _rembg = _rembg or new_session('birefnet-general')
     cut = remove(im, session=_rembg, post_process_mask=True); cut = cut.crop(cut.getbbox())
     s = (SIZE * 0.80) / max(cut.size); cut = cut.resize((round(cut.width * s), round(cut.height * s)), Image.LANCZOS)
     yy, xx = np.mgrid[0:SIZE, 0:SIZE]; t = (yy / SIZE)[:, :, None]
-    bg = np.array([250, 249, 247]) * (1 - t) + np.array([232, 229, 225]) * t
+    bg = np.array(top) * (1 - t) + np.array(bottom) * t
     r = np.sqrt(((xx - SIZE / 2) / (SIZE * .75)) ** 2 + ((yy - SIZE * .42) / (SIZE * .75)) ** 2)
     bg = bg * (1 - 0.06 * np.clip(r, 0, 1)[:, :, None])
     x = (SIZE - cut.width) // 2; y = int(SIZE * 0.88) - cut.height
@@ -156,8 +156,10 @@ def zoom(before, after, path, key):
 
 # Aviorio brand palette, from the live theme (Aviorio V2) settings: accent 1, accent 2, background.
 BRAND = {'espresso': '422D23', 'bronze': '9A7646', 'cream': 'F2ECE2'}
-INDOOR_STYLE = (' Styled in a warm home interior that matches the Aviorio brand: deep espresso brown (#422D23) accent wall,'
-                ' cabinetry or upholstery, warm cream (#F2ECE2) walls, brushed bronze (#9A7646) details, soft warm evening light.')
+INDOOR_STYLE = (' The room must clearly show the Aviorio brand palette: walls painted deep espresso brown (#422D23),'
+                ' or warm cream (#F2ECE2) walls with espresso wood paneling; espresso and cream furniture and textiles;'
+                ' brushed bronze (#9A7646) accents such as a side table, picture frames or a vase. Warm, cozy, upscale,'
+                ' soft warm evening light, photorealistic interior design photography.')
 
 def photoroom(path, it):
     """Paid option ($0.10 per image on Photoroom's Plus plan, free and watermarked with a sandbox_ key).
@@ -186,6 +188,7 @@ def process(plan_path, src, out):
         t = time.time(); im = load(f); res = im
         for step in act.split('+'):
             if step == 'studio': res = studio(res)
+            elif step == 'studio_brand': res = studio(res, (242, 236, 226), (214, 199, 178))  # Aviorio cream backdrop
             elif step == 'photoroom': res = photoroom(f, it)
             elif step in ('upscale', 'sharpen'): res = upscale(res)
             elif step == 'detext': res = detext(res, it.get('text_boxes'))

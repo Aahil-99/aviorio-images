@@ -1,0 +1,58 @@
+{
+ "product": "photoroom-test-2",
+ "mode": "process",
+ "run": 1,
+ "images": [
+  {
+   "key": "s10",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/solar-powered-motion-sensor-wall-light-bright-backyard-setting.jpg?v=1787374823",
+   "position": 1,
+   "role": "solar-outdoor-warm",
+   "action": "photoroom",
+   "sandbox_only": true,
+   "setting": "outdoor",
+   "padding": 0.34,
+   "prompt": "mounted high on a light grey rendered exterior house wall above head height, light shining down onto the wall below it, seen from below at an angle, dusk, small garden plants at the bottom, photorealistic architectural photography"
+  },
+  {
+   "key": "s11",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/solar-powered-motion-sensor-wall-light-solar-panel-modern-design-closeup.jpg?v=1787374823",
+   "position": 2,
+   "role": "solar-outdoor-daylight",
+   "action": "photoroom",
+   "sandbox_only": true,
+   "setting": "outdoor",
+   "padding": 0.34,
+   "prompt": "mounted high on a white painted brick exterior wall beside a modern front door, light shining down, seen from below at an angle, early evening, photorealistic architectural photography"
+  },
+  {
+   "key": "f01",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/01-hero-f01.jpg?v=1795733793",
+   "position": 3,
+   "role": "lamp-indoor-espresso-walls",
+   "action": "photoroom",
+   "sandbox_only": true,
+   "setting": "indoor",
+   "padding": 0.12,
+   "prompt": "a tall minimalist floor lamp standing on the floor in the corner of a cozy modern living room, next to a cream boucle armchair"
+  },
+  {
+   "key": "f01",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/01-hero-f01.jpg?v=1795733793",
+   "position": 4,
+   "role": "lamp-indoor-cream-espresso",
+   "action": "photoroom",
+   "sandbox_only": true,
+   "setting": "indoor",
+   "padding": 0.12,
+   "prompt": "a tall minimalist floor lamp standing on the floor in the corner of a modern bedroom with cream walls, an espresso wood bed frame and cream linen bedding"
+  },
+  {
+   "key": "f01",
+   "url": "https://cdn.shopify.com/s/files/1/0812/1568/4860/files/01-hero-f01.jpg?v=1795733793",
+   "position": 5,
+   "role": "lamp-free-brand-studio",
+   "action": "studio_brand"
+  }
+ ]
+}
