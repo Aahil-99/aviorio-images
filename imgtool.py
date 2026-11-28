@@ -45,6 +45,11 @@ def white_border(im):
     edge = np.concatenate([a[:6].reshape(-1, 3), a[-6:].reshape(-1, 3), a[:, :6].reshape(-1, 3), a[:, -6:].reshape(-1, 3)])
     return float((edge.min(1) > 235).mean())
 
+def blown_colour(im):
+    # share of pixels that are both very saturated and bright: a sign the light glow was painted in
+    h = np.asarray(im.convert('RGB').resize((512, 512)).convert('HSV')) / 255.0
+    return float(((h[..., 1] > 0.75) & (h[..., 2] > 0.6)).mean())
+
 def audit(src, out):
     from rapidocr_onnxruntime import RapidOCR
     ocr = RapidOCR(); os.makedirs(out, exist_ok=True)
@@ -54,7 +59,7 @@ def audit(src, out):
         im = load(f); r, _ = ocr(np.asarray(im.resize((min(im.width, 1000), int(im.height * min(im.width, 1000) / im.width))))[:, :, ::-1])
         words = [t for _, t, _ in (r or [])]
         rows.append({'key': os.path.splitext(os.path.basename(f))[0], 'w': im.width, 'h': im.height,
-                     'sharpness': round(sharpness(im)), 'white_border': round(white_border(im), 2),
+                     'sharpness': round(sharpness(im)), 'white_border': round(white_border(im), 2), 'blown': round(blown_colour(im), 2),
                      'text_boxes': len(words), 'text': ' | '.join(words)[:160]})
         hashes.append(dhash(im))
     group = list(range(len(rows)))
@@ -69,7 +74,7 @@ def audit(src, out):
         im = load(f); im.thumbnail((T - 8, T - 8)); x, y = (i % cols) * T, (i // cols) * (T + 46)
         sheet.paste(im, (x + (T - im.width) // 2, y + 4)); r = rows[i]
         d.text((x + 6, y + T), f"#{i+1} {r['key'][:14]} {r['w']}px", fill='black', font=F)
-        d.text((x + 6, y + T + 20), f"sharp {r['sharpness']} dup {r['dup_group']+1} txt {r['text_boxes']}", fill='black', font=F)
+        d.text((x + 6, y + T + 20), f"sharp {r['sharpness']} dup {r['dup_group']+1} txt {r['text_boxes']} blown {r['blown']}", fill='black', font=F)
     sheet.save(os.path.join(out, 'contact_sheet.jpg'), quality=85)
     print(json.dumps(rows, indent=1))
 
