@@ -2,6 +2,7 @@
   imgtool.py fetch   plan.json SRC         download every image in the plan
   imgtool.py audit   SRC OUT               metrics + near-duplicate groups + numbered contact sheet
   imgtool.py process plan.json SRC OUT     run each image's action, write final files + preview.jpg
+                                           + review_grid.jpg of every image marked "review": true
 Actions: keep | cut | studio | upscale | detext | detext+upscale
 Models (all commercial-use licenses): BiRefNet-general via rembg (MIT), Real-ESRGAN x2plus and x4plus (BSD-3),
 LaMa big-lama (Apache-2.0), RapidOCR (Apache-2.0)."""
@@ -211,6 +212,28 @@ def process(plan_path, src, out):
         for k, im in enumerate((a, b)):
             im = im.copy(); im.thumbnail((R, R)); sheet.paste(im, (10 + k * (R + 20), y + 36))
     sheet.save(os.path.join(out, 'preview.jpg'), quality=85)
+    review_grid(plan, src, out)
+
+def review_grid(plan, src, out):
+    # numbered grid of every scene photo (review: true), with the skill's own call under each,
+    # so Aahil can answer in one line, e.g. "cut 2, keep 5"
+    items = [it for it in plan['images'] if it.get('review')]
+    if not items: return
+    T, cols = 380, 4; F = font(30); f2 = font(20)
+    rows = (len(items) + cols - 1) // cols
+    sheet = Image.new('RGB', (cols * (T + 16) + 16, rows * (T + 90) + 16), (242, 236, 226)); d = ImageDraw.Draw(sheet)
+    for n, it in enumerate(items):
+        p = glob.glob(os.path.join(src, it['key'] + '.*'))
+        if not p: continue
+        im = Image.open(p[0]).convert('RGB'); im.thumbnail((T, T))
+        x = 16 + (n % cols) * (T + 16); y = 16 + (n // cols) * (T + 90)
+        sheet.paste(im, (x + (T - im.width) // 2, y + (T - im.height) // 2))
+        call = it.get('call', 'keep'); col = (40, 120, 60) if call.startswith('keep') else (200, 30, 30) if call.startswith('cut') else (180, 120, 0)
+        d.text((x, y + T + 6), str(n + 1), fill=(66, 45, 35), font=F)
+        d.text((x + 50, y + T + 12), call[:34], fill=col, font=f2)
+        it['review_no'] = n + 1
+    sheet.save(os.path.join(out, 'review_grid.jpg'), quality=85)
+    json.dump(plan, open(os.path.join(out, 'plan_result.json'), 'w'), indent=1)
 
 def fetch(plan_path, src):
     os.makedirs(src, exist_ok=True)
